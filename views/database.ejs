@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>URL Shortener - Database</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 24px;
+      background-color: #725154;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      width: 90%;
+      padding: 20px;
+      background-color: #db8047;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      font-size: 28px;
+      color: white;
+    }
+
+    table {
+      width: 100%;
+      margin-top: 35px;
+    }
+
+    th, td {
+      padding: 20px;
+      border-bottom: 1px solid #6d99ad;
+      word-wrap: break-word;
+      max-width: 300px; /* Adjust the maximum width as needed */
+      color: white;
+    }
+
+    th {
+      background-color: #031a38;
+      font-weight: bold;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #72add5;
+      color: #4f79ec;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #1c5491;
+    }
+
+    /* Updated CSS for the full URL */
+    .data_table table tbody td a {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3; /* Limit to 3 lines */
+      overflow: hidden;
+      text-overflow: ellipsis;
+      word-break: break-word;
+      color: #4f79ec;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Database Of All Url</h1>
+    <% if (data.length > 0) { %>
+      <div class="data_table">
+      <table>
+        <thead>
+          <tr>
+            <th style="max-width: 400px;">Full URL</th>
+            <th style="max-width: 150px;">Note</th>
+            <th style="max-width: 200px;">Short URL</th>
+            <th>Clicks</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% data.forEach((count) => { %>
+            <tr>
+              <td><a href="<%= count.fullurl %>"><%= count.fullurl %></a></td>
+              <td><%= count.note %></td>
+              <td><a href="/<%= count.shorturl %>"><%= count.shorturl %></a></td>
+              <td><%= count.clicks %></td>
+            </tr>
+          <% }); %>
+        </tbody>
+      </table>
+    </div>
+    <% } else { %>
+      <p>No data found.</p>
+    <% } %>
+    <br>
+    <a href="/" class="btn">Back to Home</a>
+  </div>
+</body>
+</html>

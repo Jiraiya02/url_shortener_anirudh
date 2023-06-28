@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>URL Details</title>
+    <style>
+        body {
+            background-color: #0ee7dc;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            margin: 0 auto;
+            max-width: 60%;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            margin-top: 50vh;
+            transform: translateY(-50%);
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 40px;
+        }
+
+        .details-table {
+            margin-bottom: 40px;
+        }
+
+        .details-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .details-table table thead th {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .details-table table tbody td {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .details-table table tbody td a {
+            color: #007bff;
+            text-decoration: none;
+            word-wrap: break-word;
+            max-width: 300px;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .go-home {
+            margin-top: 20px;
+        }
+
+        .go-home a {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            text-decoration: none;
+        }
+
+        .go-home a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Shotern URL</h1>
+        <div class="details-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Full URL</th>
+                        <th>Note</th>
+                        <th>Short URL</th>
+                        <th>Clicks</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="<%= details.fullurl %>"><%= details.fullurl %></a></td>
+                        <td><%= details.note %></td>
+                        <td><a href="/<%= details.shorturl %>"><%= details.shorturl %></a></td>
+                        <td><%= details.clicks %></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="go-home">
+            <a href="/">Go Home</a>
+        </div>
+    </div>
+</body>
+</html>
