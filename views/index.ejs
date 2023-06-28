@@ -5,19 +5,26 @@
     <title>URL Shortener</title>
     <style>
         body {
-            background-color: #15b0b3;
+            background: linear-gradient(-45deg, #fc5c7d, #6a82fb, #05dfd7, #b987ff);
+            background-size: 400% 400%;
+            animation: background-animation 10s ease infinite;
             font-family: Arial, sans-serif;
+            overflow: hidden;
         }
 
         .c {
-            max-width: 600px;
+            width: 70%;
+           
             margin: 0 auto;
-            padding: 40px;
+            padding: 20px;
             text-align: center;
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+            background-color: #1aac77;
+            
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         }
 
         h1 {
@@ -26,16 +33,31 @@
             margin-top: 10px;
         }
 
-        form {
+        .f {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 30px;
             margin-bottom: 30px;
+        }
+
+        form {
+            flex: 1;
+        }
+
+        form.l {
+            text-align: left;
+        }
+
+        form.r {
+            text-align: right;
         }
 
         input[type="url"],
         input[type="text"] {
             padding: 13px;
             font-size: 16px;
-            width: 100%;
-            margin-bottom: 30px;
+            width: 70%;
             border: 1px solid #962f2f;
             border-radius: 4px;
         }
@@ -48,43 +70,52 @@
             border: none;
             border-radius: 4px;
             cursor: pointer;
+            transition: background-color 0.3s ease;
         }
 
         button:hover {
             background-color: #0056b3;
         }
 
-        .l {
-            display: flex;
-            justify-content: center;
+        .links-container {
+            text-align: center;
+            margin-top: 30px;
         }
 
         .links-container button {
             margin: 0 10px;
         }
 
-        
+        @keyframes background-animation {
+            0% {
+                background-position: 0% 40%;
+            }
+            50% {
+                background-position: 90% 40%;
+            }
+            100% {
+                background-position: 0% 30%;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="c">
-        <h1>URL Shortener</h1>
-        
-        <form action="/" method="POST">
-          <input type="url" name="fullurl" placeholder="Type Full Url here" required>
-            <input type="text" name="note" placeholder="Type note for url here" required>
-            <button type="submit">Shorten</button>
-        </form>
+        <h1 class="hh">URL Shortener</h1>
         <br><br><br>
-        <h1>Search URL</h1>
-
-        <form action="/search" method="POST">
-            <input type="text" name="Search_url" placeholder="type fullurl or shorturl or note here">
-            <button type="submit">Search</button>
-        </form>
+        <div class="f">
+            <form class="l" action="/" method="POST">
+                <input type="url" name="fullurl" placeholder="Type Full URL" required>
+                <input type="text" name="note" placeholder="Type Note for URL" required>
+                <button type="submit">Shorten</button>
+            </form>
+            <form class="r" action="/search" method="POST">
+                <input type="text" name="Search_url" placeholder="Type Full URL, Short URL, or Note">
+                <button type="submit">Search</button>
+            </form>
+        </div>
         <br><br><br>
-        <br>
-        <div class="l">
+        <div class="links-container">
             <a href="/database"><button>View Database</button></a>
         </div>
     </div>
