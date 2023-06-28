@@ -14,7 +14,7 @@
       height: 100vh;
     }
 
-    .container {
+    .c {
       width: 90%;
       padding: 20px;
       background-color: #db8047;
@@ -46,18 +46,16 @@
       font-weight: bold;
     }
 
-    .btn {
+    .end {
       display: inline-block;
       padding: 10px 20px;
       background-color: #72add5;
       color: #4f79ec;
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
+      
       transition: background-color 0.3s;
     }
 
-    .btn:hover {
+    .end:hover {
       background-color: #1c5491;
     }
 
@@ -65,7 +63,7 @@
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="c">
     <h1>Database Of All Url</h1>
     <% if (data.length > 0) { %>
       <div >
@@ -91,10 +89,10 @@
       </table>
     </div>
     <% } else { %>
-      <p>No data found.</p>
+      <p>No data Available</p>
     <% } %>
     <br>
-    <a href="/" class="btn">Back to Home</a>
+    <a href="/" class="end">Back to Home</a>
   </div>
 </body>
 </html>
