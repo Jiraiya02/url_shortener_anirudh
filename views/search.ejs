@@ -9,7 +9,7 @@
             font-family: Arial, sans-serif;
         }
 
-        .container {
+        .c {
             margin: 0 auto;
             max-width: 60%;
             padding: 40px;
@@ -26,16 +26,16 @@
             margin-bottom: 40px;
         }
 
-        .results {
+        .r {
             margin-bottom: 40px;
         }
 
-        .results table {
+        .r table {
             width: 100%;
             border-collapse: collapse;
         }
 
-        .results table thead th {
+        .r table thead th {
             background-color: #37099a;
             color: #fff;
             padding: 10px;
@@ -43,14 +43,14 @@
             
         }
 
-        .results table tbody td {
+        .r table tbody td {
             padding: 10px;
             border-bottom: 1px solid #ccc;
             font-size: 45 px;
             
         }
 
-        .results table tbody td a {
+        .r table tbody td a {
             color: #940620;
             text-decoration: none;
             word-wrap: break-word;
@@ -60,11 +60,11 @@
             
         }
 
-        .back-button {
+        .end {
             margin-bottom: 20px;
         }
 
-        .back-button a {
+        .end a {
             display: inline-block;
             padding: 10px 20px;
             background-color: #01110d;
@@ -73,11 +73,11 @@
             border-radius: 4px;
         }
 
-        .back-button a:hover {
+        .end a:hover {
             background-color: #d21430;
         }
 
-        .no-results {
+        .p1 {
             color: #333;
             font-size: 18px;
             margin-top: 40px;
@@ -85,10 +85,10 @@
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="c">
         <h1>Search Results</h1>
         <% if (results.length > 0) { %>
-            <div class="results">
+            <div class="r">
                 <table>
                     <thead>
                         <tr>
@@ -111,9 +111,9 @@
                 </table>
             </div>
         <% } else { %>
-            <p class="no-results">No results found.</p>
+            <p class="p1">No results found.</p>
         <% } %>
-        <div class="back-button">
+        <div class="end">
             <a href="/">Back to Home</a>
         </div>
     </div>
