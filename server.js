@@ -11,7 +11,7 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
 
-const mongoURI = 'mongodb://anirudhmv77:anadlave@ac-lnwmqip-shard-00-00.rae2l5s.mongodb.net:27017,ac-lnwmqip-shard-00-01.rae2l5s.mongodb.net:27017,ac-lnwmqip-shard-00-02.rae2l5s.mongodb.net:27017/?ssl=true&replicaSet=atlas-qbvx8e-shard-0&authSource=admin&retryWrites=true&w=majority';
+const mongoURI = 'mongodb://anirudhmv77:anadlave@ac-xwzwj0k-shard-00-00.nmnqqdz.mongodb.net:27017,ac-xwzwj0k-shard-00-01.nmnqqdz.mongodb.net:27017,ac-xwzwj0k-shard-00-02.nmnqqdz.mongodb.net:27017/?ssl=true&replicaSet=atlas-c609zo-shard-0&authSource=admin&retryWrites=true&w=majority';
 
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true,useCreateIndex: true, })
   .then(() => console.log('Connected to MongoDB'))
