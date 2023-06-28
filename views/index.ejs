@@ -9,7 +9,7 @@
             font-family: Arial, sans-serif;
         }
 
-        .container {
+        .c {
             max-width: 600px;
             margin: 0 auto;
             padding: 40px;
@@ -54,7 +54,7 @@
             background-color: #0056b3;
         }
 
-        .links-container {
+        .l {
             display: flex;
             justify-content: center;
         }
@@ -63,30 +63,28 @@
             margin: 0 10px;
         }
 
-        .links-container button:last-child {
-            background-color: #28a745;
-        }
+        
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="c">
         <h1>URL Shortener</h1>
-        <br><br><br>
+        
         <form action="/" method="POST">
-          <input type="url" name="fullurl" placeholder="Type Full Url" required>
-            <input type="text" name="note" placeholder="Type note for url" required>
+          <input type="url" name="fullurl" placeholder="Type Full Url here" required>
+            <input type="text" name="note" placeholder="Type note for url here" required>
             <button type="submit">Shorten</button>
         </form>
         <br><br><br>
         <h1>Search URL</h1>
 
         <form action="/search" method="POST">
-            <input type="text" name="Search_url" placeholder="type fullurl or shorturl or note">
+            <input type="text" name="Search_url" placeholder="type fullurl or shorturl or note here">
             <button type="submit">Search</button>
         </form>
         <br><br><br>
         <br>
-        <div class="links-container">
+        <div class="l">
             <a href="/database"><button>View Database</button></a>
         </div>
     </div>
