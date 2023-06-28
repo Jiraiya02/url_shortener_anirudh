@@ -77,7 +77,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Shotern URL</h1>
+        <h1>Shorten URL</h1>
         <div class="details-table">
             <table>
                 <thead>
@@ -92,7 +92,7 @@
                     <tr>
                         <td><a href="<%= details.fullurl %>"><%= details.fullurl %></a></td>
                         <td><%= details.note %></td>
-                        <td><a href="/<%= details.shorturl %>"><%= details.shorturl %></a></td>
+                        <td><a href="/redirect/<%= details.shorturl %>"><%= details.shortlink %></a></td>
                         <td><%= details.clicks %></td>
                     </tr>
                 </tbody>
