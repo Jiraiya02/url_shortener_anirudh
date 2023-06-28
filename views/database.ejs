@@ -61,30 +61,20 @@
       background-color: #1c5491;
     }
 
-    /* Updated CSS for the full URL */
-    .data_table table tbody td a {
-      display: -webkit-box;
-      -webkit-box-orient: vertical;
-      -webkit-line-clamp: 3; /* Limit to 3 lines */
-      overflow: hidden;
-      text-overflow: ellipsis;
-      word-break: break-word;
-      color: #4f79ec;
-      text-decoration: none;
-    }
+    
   </style>
 </head>
 <body>
   <div class="container">
     <h1>Database Of All Url</h1>
     <% if (data.length > 0) { %>
-      <div class="data_table">
+      <div >
       <table>
         <thead>
           <tr>
-            <th style="max-width: 400px;">Full URL</th>
-            <th style="max-width: 150px;">Note</th>
-            <th style="max-width: 200px;">Short URL</th>
+            <th >Full URL</th>
+            <th>Note</th>
+            <th">Short URL</th>
             <th>Clicks</th>
           </tr>
         </thead>
