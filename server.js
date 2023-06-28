@@ -22,6 +22,7 @@ const urlSchema = new mongoose.Schema({
   fullurl: String,
   note: String,
   shorturl: String,
+  shortlink: String,
   clicks: {
     type: Number,
     default: 0
@@ -39,11 +40,15 @@ app.get('/', (req, res) => {
 app.post('/', async (req, res) => {
   const { fullurl, note } = req.body;
   const shorturl = shortid.generate();
+  const siteurl=req.protocol+'://'+req.get('host');
+  const shortlink=siteurl+'/redirect/'+shorturl;
+  
 
   const url = new URL({
     fullurl,
     note,
-    shorturl
+    shorturl,
+    shortlink
   });
 
   await url.save();
